@@ -5,4 +5,4 @@ set -eu
 
 echo $*
 pwd
-ls
+ls -l
