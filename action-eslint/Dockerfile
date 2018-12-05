@@ -7,7 +7,7 @@ LABEL "com.github.actions.color"="orange"
 
 LABEL version="1.0.0"
 LABEL repository="http://github.com/morphinewan/actions"
-LABEL homepage="http://github.com/morphinewan/actions"
+LABEL homepage="http://github.com/morphinewan/actions/action-eslint"
 LABEL maintainer="Wan Yi <mail@wanyi.me>"
 
 ADD entrypoint.sh /entrypoint.sh
