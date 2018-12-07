@@ -8,6 +8,8 @@ gpg -q --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" -o ~/.ssh
 chmod 400 ~/.ssh/id_rsa
 
 ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
+
+
 # Decrypt the file
 # mkdir -p /secrets
 # gpg -q --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" -o /secrets/docker_id_rsa docker_id_rsa.gpg
@@ -20,13 +22,15 @@ ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
 # Delete Secrets
 # rm -rf /secrets
 
-git submodule sync
-git submodule update --init
+# git submodule sync
+# git submodule update --init
+
+git clone git@github.com:morphinewan/actions.git
 
 rm -rf ~/.ssh
-
-# 安装环境依赖#
-yarn install
-
-# 测试eslint
-yarn lint-ci
+#
+# # 安装环境依赖#
+# yarn install
+#
+# # 测试eslint
+# yarn lint-ci
