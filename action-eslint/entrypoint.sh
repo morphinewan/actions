@@ -15,16 +15,8 @@ ssh-agent bash -c 'ssh-add /secrets/docker_id_rsa; git submodule sync; git submo
 # Delete Secrets
 rm -rf /secrets
 
-# checkout submodules#
-# git submodule sync
-# git submodule update --init
-
 # 安装环境依赖#
 yarn install
 
-#
-# # 测试eslint
-# yarn lint-ci
-#
-# # 单体测试
-# yarn test --ci --testResultsProcessor="jest-junit"
+# 测试eslint
+yarn lint-ci
