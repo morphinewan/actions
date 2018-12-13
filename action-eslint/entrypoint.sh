@@ -10,17 +10,17 @@ set -eu
 # ssh-keyscan -t rsa github.com > $HOME/.ssh/known_hosts
 
 
-# Decrypt the file
-mkdir -p $HOME/secrets
-gpg -q --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" -o $HOME/secrets/docker_id_rsa docker_id_rsa.gpg
-chmod 400 $HOME/secrets/docker_id_rsa
-ssh-keygen -R github.com
-
-checkout submodules
-ssh-agent bash -c 'ssh-add $HOME/secrets/docker_id_rsa; git submodule sync; git submodule update --init;'
-
-# Delete Secrets
-rm -rf $HOME/secrets
+# # Decrypt the file
+# mkdir -p $HOME/secrets
+# gpg -q --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" -o $HOME/secrets/docker_id_rsa docker_id_rsa.gpg
+# chmod 400 $HOME/secrets/docker_id_rsa
+# ssh-keygen -R github.com
+#
+# checkout submodules
+# ssh-agent bash -c 'ssh-add $HOME/secrets/docker_id_rsa; git submodule sync; git submodule update --init;'
+#
+# # Delete Secrets
+# rm -rf $HOME/secrets
 
 # git submodule sync
 # git submodule update --init
@@ -34,3 +34,15 @@ rm -rf $HOME/secrets
 #
 # # 测试eslint
 # yarn lint-ci
+
+# install git
+apt-get update
+apt-get install -y git
+
+mkdir /root/.ssh/
+gpg -q --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" -o /root/.ssh/id_rsa docker_id_rsa.gpg
+
+touch /root/.ssh/known_hosts
+ssh-keyscan github.com >> /root/.ssh/known_hosts
+
+git clone git@github.com:morphinewan/actions.git
