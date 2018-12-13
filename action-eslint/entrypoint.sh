@@ -35,12 +35,9 @@ set -eu
 # # 测试eslint
 # yarn lint-ci
 
-# install git
-apt-get update
-apt-get install -y git
-
 mkdir /root/.ssh/
 gpg -q --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" -o /root/.ssh/id_rsa docker_id_rsa.gpg
+chmod 400 $HOME/.ssh/id_rsa
 
 touch /root/.ssh/known_hosts
 ssh-keyscan github.com >> /root/.ssh/known_hosts
