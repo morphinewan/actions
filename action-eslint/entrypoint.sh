@@ -37,7 +37,7 @@ set -eu
 
 mkdir /root/.ssh/
 gpg -q --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" -o /root/.ssh/id_rsa docker_id_rsa.gpg
-chmod 400 $HOME/.ssh/id_rsa
+chmod 400 /root/.ssh/id_rsa
 
 touch /root/.ssh/known_hosts
 ssh-keyscan github.com >> /root/.ssh/known_hosts
