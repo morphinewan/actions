@@ -16,6 +16,13 @@ git submodule update --init
 
 rm -rf /root/.ssh
 
+pwd
+
+# 安装环境依赖#
+yarn install
+
+ls
+
 ls ./node_modules/.bin
 
 # run lint

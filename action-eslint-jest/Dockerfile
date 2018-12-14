@@ -10,8 +10,5 @@ LABEL repository="http://github.com/morphinewan/actions"
 LABEL homepage="http://github.com/morphinewan/actions/action-eslint-jest"
 LABEL maintainer="Wan Yi <mail@wanyi.me>"
 
-# 安装环境依赖#
-RUN yarn install
-
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
