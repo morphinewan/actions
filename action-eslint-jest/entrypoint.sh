@@ -16,6 +16,8 @@ git submodule update --init
 
 rm -rf /root/.ssh
 
+ls ./node_modules/.bin
+
 # run lint
 yarn lint
 
