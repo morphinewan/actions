@@ -19,4 +19,4 @@ rm -rf /root/.ssh
 pip install -r requirements.txt
 
 export DJANGO_SETTINGS_MODULE=mudi.settings
-python manage.py test
+python manage.py test --parallel
