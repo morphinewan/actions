@@ -12,7 +12,9 @@ LABEL maintainer="Wan Yi <mail@wanyi.me>"
 
 RUN apk --update add git openssh && \
     rm -rf /var/lib/apt/lists/* && \
-    rm /var/cache/apk/*
+    rm /var/cache/apk/* && \
+    apk add --no-cache gnupg && \
+    apk add --no-cache openssh-client
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
