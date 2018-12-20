@@ -2,4 +2,4 @@
 
 set -eu
 
-qshell account
+qnsync -ak $QINIU_ACCESS_KEY -sk $QINIU_SECRET_KEY -bk $QINIU_BUCKET $GITHUB_WORKSPACE/$SYNC_PATH
