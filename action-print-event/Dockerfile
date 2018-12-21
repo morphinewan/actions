@@ -2,7 +2,7 @@ FROM alpine
 
 LABEL "com.github.actions.name"="Print Event"
 LABEL "com.github.actions.description"="Print GitHub Event"
-LABEL "com.github.actions.icon"="server"
+LABEL "com.github.actions.icon"="printer"
 LABEL "com.github.actions.color"="orange"
 
 LABEL version="1.0.0"
