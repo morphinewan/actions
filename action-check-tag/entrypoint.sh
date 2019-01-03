@@ -2,5 +2,8 @@
 
 set -eu
 
-echo $GITHUB_EVENT_NAME
-cat $GITHUB_EVENT_PATH
+cp /tag ./tag
+TAG=$(./tag $GITHUB_EVENT_PATH)
+echo "========================================"
+echo Tag: $TAG
+echo "========================================"
