@@ -1,9 +1,8 @@
 #!/bin/sh
 set -eu
 
-cat > ./slack.json <<EOL
-{
-    "text": "$GITHUB_REPOSITORY $GITHUB_WORKFLOW 完成",
-    "username": "$GITHUB_ACTOR"
-}
-EOL
+cp /tag ./tag
+TAG=$(./tag $GITHUB_EVENT_PATH)
+echo "========================================"
+echo Tag: $TAG
+echo "========================================"
