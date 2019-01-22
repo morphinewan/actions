@@ -2,8 +2,8 @@ FROM alpine
 
 LABEL "com.github.actions.name"="Update Submodule"
 LABEL "com.github.actions.description"="Update Git Submodule"
-LABEL "com.github.actions.icon"="server"
-LABEL "com.github.actions.color"="orange"
+LABEL "com.github.actions.icon"="git-commit"
+LABEL "com.github.actions.color"="gray-dark"
 
 LABEL version="1.0.0"
 LABEL repository="http://github.com/morphinewan/actions"

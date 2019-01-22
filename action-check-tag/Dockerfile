@@ -2,8 +2,8 @@ FROM alpine
 
 LABEL "com.github.actions.name"="Check Tag"
 LABEL "com.github.actions.description"="Check Tag"
-LABEL "com.github.actions.icon"="printer"
-LABEL "com.github.actions.color"="orange"
+LABEL "com.github.actions.icon"="tag"
+LABEL "com.github.actions.color"="yellow"
 
 LABEL version="1.0.0"
 LABEL repository="http://github.com/morphinewan/actions"
