@@ -1,4 +1,4 @@
-FROM alpine
+FROM node:11
 
 LABEL version="1.0.0"
 LABEL maintainer="morphinewan"
@@ -7,5 +7,6 @@ LABEL "com.github.actions.description"="Associate Commits with a Sentry Release.
 LABEL "com.github.actions.icon"="package"
 LABEL "com.github.actions.color"="blue"
 
+RUN npm install -g @sentry/cli
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
