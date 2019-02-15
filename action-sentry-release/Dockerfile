@@ -1,4 +1,4 @@
-FROM node:11
+FROM getsentry/sentry-cli:latest
 
 LABEL version="1.0.0"
 LABEL maintainer="morphinewan"

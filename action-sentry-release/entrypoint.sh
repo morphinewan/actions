@@ -3,8 +3,6 @@
 # avoid continuing when errors.
 set -e
 
-npm install @sentry/cli
-export PATH=$(npm bin):$PATH
 # $SENTRY_AUTH_TOKEN
 # $SENTRY_ORG
 
@@ -19,4 +17,4 @@ sentry-cli releases new --finalize -p $SENTRY_PROJECT $TAG
 sentry-cli releases set-commits --auto $SENTRY_VERSION
 
 # Tell Sentry When You Deploy a Release
-sentry-cli releases deploys $TAG new
+sentry-cli releases deploys $TAG new -e PRODUCTION
