@@ -3,6 +3,7 @@
 # avoid continuing when errors.
 set -e
 
+export PATH=$(npm bin):$PATH
 # $SENTRY_AUTH_TOKEN
 # $SENTRY_ORG
 

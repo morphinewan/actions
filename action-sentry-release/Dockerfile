@@ -7,6 +7,6 @@ LABEL "com.github.actions.description"="Associate Commits with a Sentry Release.
 LABEL "com.github.actions.icon"="package"
 LABEL "com.github.actions.color"="blue"
 
-RUN npm install -g @sentry/cli
+RUN npm install @sentry/cli
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
