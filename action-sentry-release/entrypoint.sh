@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # avoid continuing when errors.
-set -e
+set -eu
 
 # $SENTRY_AUTH_TOKEN
 # $SENTRY_ORG
@@ -18,12 +18,14 @@ sentry-cli releases set-commits --auto $SENTRY_VERSION
 
 # Upload Source Maps
 for file in ./dist/static/js/*/*.js.map
+do
     if test -f $file
     then
-        echo "Upload sourcemap $file"
-        sentry-cli releases files $TAG upload-sourcemaps $file
+        URL_PREFIX=$(echo $file | awk -F / '{print "~/js/"$(NF-1)"/"$NF}')
+        echo "Upload sourcemap $file with url-prefix ${URL_PREFIX}"
+        sentry-cli releases files $TAG upload-sourcemaps $file --url-prefix '${URL_PREFIX}'
     fi
-fi
+done
 
 echo "Deploy a Release $TAG"
 sentry-cli releases deploys $TAG new -e PRODUCTION
