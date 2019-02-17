@@ -10,7 +10,6 @@ TAG=$(./tag $GITHUB_EVENT_PATH)
 
 SENTRY_VERSION=$(sentry-cli releases propose-version)
 
-echo "Create a release $TAG"
 sentry-cli releases new --finalize -p $SENTRY_PROJECT $TAG
 
 echo "Associate commits $SENTRY_VERSION with the release"
@@ -22,10 +21,8 @@ do
     if test -f $file
     then
         URL_PREFIX=$(echo $file | awk -F / '{print "~/js/"$(NF-1)}')
-        echo "Upload sourcemap $file with url-prefix ${URL_PREFIX}"
-        sentry-cli releases files $TAG upload-sourcemaps $file --url-prefix ${URL_PREFIX}
+        sentry-cli releases files $TAG upload-sourcemaps $file --url-prefix ${URL_PREFIX} --rewrite
     fi
 done
 
-echo "Deploy a Release $TAG"
 sentry-cli releases deploys $TAG new -e PRODUCTION
