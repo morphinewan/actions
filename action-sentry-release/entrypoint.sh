@@ -23,4 +23,4 @@ do
     fi
 done
 
-sentry-cli releases deploys $TAG new -e PRODUCTION
+sentry-cli releases deploys $TAG new -e $SENTRY_ENVIRONMENT
