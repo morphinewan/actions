@@ -8,11 +8,9 @@ set -eu
 
 TAG=$(./tag $GITHUB_EVENT_PATH)
 
-# SENTRY_VERSION=$(sentry-cli releases propose-version)
-
 sentry-cli releases new --finalize -p $SENTRY_PROJECT $TAG
 
-echo "Associate commits $SENTRY_VERSION with the release $TAG"
+echo "Associate commits $GITHUB_SHA with the release $TAG"
 sentry-cli releases set-commits "$TAG" --commit "${GITHUB_REPOSITORY}@${GITHUB_SHA}"
 
 # Upload Source Maps
