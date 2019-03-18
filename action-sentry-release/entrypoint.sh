@@ -11,7 +11,7 @@ TAG_PATTERN="^refs\/tags\/(.*)$"
 
 if [[ $GITHUB_REF =~ $TAG_PATTERN ]]
 then
-    TAG="$BASH_REMATCH[1]"
+    TAG="${BASH_REMATCH[1]}"
     echo "Create a new sentry release for Tag:[$TAG]."
 else
     echo "Not tag action, skip creating sentry release."
