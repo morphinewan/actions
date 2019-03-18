@@ -6,7 +6,17 @@ set -eu
 # $SENTRY_AUTH_TOKEN
 # $SENTRY_ORG
 
-TAG=$(./tag $GITHUB_EVENT_PATH)
+
+TAG_PATTERN="^refs\/tags\/(.*)$"
+
+if [[ $GITHUB_REF =~ $TAG_PATTERN ]]
+then
+    TAG="$BASH_REMATCH[1]"
+    echo "Create a new sentry release for Tag:[$TAG]."
+else
+    echo "Not tag action, skip creating sentry release."
+    exit 1
+fi
 
 sentry-cli releases new --finalize -p $SENTRY_PROJECT $TAG
 
