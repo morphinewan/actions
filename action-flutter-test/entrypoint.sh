@@ -2,8 +2,9 @@
 
 set -eu
 
-echo $HOME
-echo $FLUTTER_HOME
-echo $PATH
-which flutter
-# flutter test test/
+if [ -d $HOME/.flutter ]
+then
+    mkdir -p $HOME/.flutter
+fi
+
+flutter test test/
