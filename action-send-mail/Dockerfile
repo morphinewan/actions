@@ -8,7 +8,7 @@ LABEL "com.github.actions.color"="white"
 LABEL version="1.0.0"
 LABEL repository="http://github.com/morphinewan/actions"
 LABEL homepage="http://github.com/morphinewan/actions/action-upload-cdn"
-LABEL maintainer="Wan Yi <mail@wanyi.me>"
+LABEL maintainer="Wan Yi <root@wanyi.dev>"
 
 RUN apk add --no-cache curl
 ADD entrypoint.sh /entrypoint.sh

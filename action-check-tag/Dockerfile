@@ -8,7 +8,7 @@ LABEL "com.github.actions.color"="yellow"
 LABEL version="1.0.0"
 LABEL repository="http://github.com/morphinewan/actions"
 LABEL homepage="http://github.com/morphinewan/actions/action-check-tag"
-LABEL maintainer="Wan Yi <mail@wanyi.me>"
+LABEL maintainer="Wan Yi <root@wanyi.dev>"
 
 ADD ./bin/tag /tag
 RUN chmod +x /tag
