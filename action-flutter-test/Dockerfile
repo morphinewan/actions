@@ -1,4 +1,4 @@
-FROM morphinewan/flutter:latest
+FROM cirrusci/flutter:latest
 
 LABEL "com.github.actions.name"="Flutter Test"
 LABEL "com.github.actions.description"="Run Flutter Test"
