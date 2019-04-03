@@ -2,4 +2,8 @@
 
 set -eu
 
-flutter test test/
+echo $HOME
+echo $FLUTTER_HOME
+echo $PATH
+which flutter
+# flutter test test/
