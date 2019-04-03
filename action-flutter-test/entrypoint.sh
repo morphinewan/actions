@@ -7,8 +7,6 @@ set -eu
 #     mkdir -p $HOME/.flutter
 # fi
 
-ls -lah /home/morphine
-
-ln -s $HOME/.flutter /home/morphine/.flutter
+ln -s /home/morphine/.flutter $HOME/.flutter
 
 flutter test test/
