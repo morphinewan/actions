@@ -20,3 +20,6 @@ fi
 if [ -d /root/.ssh ]; then
     rm -rf /root/.ssh
 fi
+
+# 删除缓存文件
+git clean -fdx
