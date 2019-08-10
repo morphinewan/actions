@@ -3,9 +3,6 @@
 # avoid continuing when errors.
 set -eu
 
-# $SENTRY_AUTH_TOKEN
-# $SENTRY_ORG
-
 TAG_PATTERN="^refs\/tags\/(.*)$"
 
 if [[ $GITHUB_REF =~ $TAG_PATTERN ]]
