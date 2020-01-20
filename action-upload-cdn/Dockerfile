@@ -10,7 +10,7 @@ LABEL repository="http://github.com/morphinewan/actions"
 LABEL homepage="http://github.com/morphinewan/actions/action-upload-cdn"
 LABEL maintainer="Wan Yi <root@wanyi.dev>"
 
-ADD https://github.com/morphinewan/tools/releases/download/1.7.1/qnsync /bin/qnsync
+ADD https://github.com/morphinewan/tools/releases/download/1.7.2/qnsync /bin/qnsync
 RUN chmod +x /bin/qnsync
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
